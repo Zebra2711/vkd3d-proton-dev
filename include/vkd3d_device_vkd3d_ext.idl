@@ -137,3 +137,18 @@ interface IAmdExtAntiLagApi : IUnknown
 {
     HRESULT UpdateAntiLagState(void *pData);
 }
+
+[
+    uuid(e859c4ac-ba8f-41c4-8eac-1137fde6158d),
+    object,
+    local,
+    pointer_default(unique)
+]
+
+interface ID3D12DeviceExt2 : ID3D12DeviceExt1
+{
+    BOOL SupportsCubin64bit();
+    HRESULT CreateCubinComputeShaderExV2(D3D12_CREATE_CUBIN_SHADER_PARAMS *params);
+    HRESULT GetCudaMergedTextureSamplerObject(D3D12_GET_CUDA_MERGED_TEXTURE_SAMPLER_OBJECT_PARAMS *params);
+    HRESULT GetCudaIndependentDescriptorObject(D3D12_GET_CUDA_INDEPENDENT_DESCRIPTOR_OBJECT_PARAMS *params);
+}
